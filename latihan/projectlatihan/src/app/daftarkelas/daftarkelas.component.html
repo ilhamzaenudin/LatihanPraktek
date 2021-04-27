@@ -1,0 +1,16 @@
+<h1>Daftar Kelas</h1>
+<form [formGroup] = "cariDataForm" method="POST">
+    <table>
+        <tr>
+            <td><label for="nama">Nama </label></td>
+            <td><input type="text" formControlName="nama" placeholder="nama..">
+            </td>
+        </tr>
+    </table>
+    <button  type="submit" (click) = "cariData()" class="btn btn-primary">Cari</button>
+</form>
+<button class="btn btn-primary" routerLink="/form2">Add</button>
+<br>
+<br>
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+</table>

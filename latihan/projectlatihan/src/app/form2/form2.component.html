@@ -1,0 +1,22 @@
+<form [formGroup] = "addDataForm" method="POST">
+    <table>
+        <tr>
+            <td><label for="nama">Nama </label></td>
+            <td><input type="text" formControlName="nama" placeholder="nama..">
+                <span *ngIf="!addDataForm.get('nama')?.valid && addDataForm.get('nama')?.touched"
+                    class="help-block">Wajib
+                    di isi!</span>
+            </td>
+
+        </tr>
+        <tr>
+            <td><label for="keterangan">Keterangan </label></td>
+            <td><input type="text" formControlName="keterangan" placeholder="keterangan..">
+                <span *ngIf="!addDataForm.get('keterangan')?.valid && addDataForm.get('keterangan')?.touched"
+                    class="help-block">Wajib
+                    di isi!</span>
+            </td>
+        </tr>
+        <button  type="submit" (click) = "simpanData()" class="btn btn-secondary">{{isEdit === true ? 'Update' : 'Add'}}</button>
+    </table>
+</form>

@@ -1,0 +1,42 @@
+<form [formGroup]="addDataForm" method="POST">
+    <table>
+        <h5>Tambah Data Costumer</h5>
+        <tr>
+            <td><label for="nama">Nama </label></td>
+            <td><input type="text" formControlName="nama" placeholder="nama..">
+                <span *ngIf="!addDataForm.get('nama')?.valid && addDataForm.get('nama')?.touched"
+                    class="help-block">Wajib
+                    di isi!</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="nama">Alamat </label></td>
+            <td><input type="text" formControlName="alamat" placeholder="alamat..">
+                <span *ngIf="!addDataForm.get('alamat')?.valid && addDataForm.get('alamat')?.touched"
+                    class="help-block">Wajib
+                    di isi!</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="nama">Kota </label></td>
+            <td><input type="text" formControlName="kota" placeholder="kota..">
+                <span *ngIf="!addDataForm.get('kota')?.valid && addDataForm.get('kota')?.touched"
+                    class="help-block">Wajib
+                    di isi!</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="nama">Pendapatan </label></td>
+            <td><input type="text" formControlName="pendapatan" placeholder="pendapatan..">
+                <span *ngIf="!addDataForm.get('pendapatan')?.valid && addDataForm.get('pendapatan')?.touched"
+                    class="help-block">Wajib
+                    di isi!</span>
+            </td>
+        </tr>
+        <button type="submit" (click)="simpanData()" class="btn btn-primary">Tambah Data</button>
+    </table>
+</form>
+<br>
+<div>
+    <app-tabel></app-tabel>
+</div>
